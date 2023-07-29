@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="Picsart_23-07-27_10-07-49-588.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume_Data_Form</title>
+</head>
+
+<body>
+    <div id="information" class="bg-gray-600">
+        <h1 class="text-center italic text-3xl font-mono bg-gray-900 text-gray-100">REQUIRED DATA</h1>
+        <div class="form translate-x-56 inline">
+            <div class="col-md-6 ml-9 mt-5 text-2xl font-serif ">
+                <div class="form-group mt-8">
+                    <label for="namefield" class="text-gray-100">Your Name</label><br>
+                    <input type="text" id="namefield" placeholder="Enter here"
+                        class=" border-solid border-black bg-gray-300 w-3/5 text-gray-900" />
+                </div>
+                <div class="form-group mt-8">
+                    <label for="profession" class="text-gray-100">Your Profession</label><br>
+                    <input type="text" id="profession" placeholder="Enter here"
+                        class=" border-solid border-black bg-gray-300 w-3/5 text-gray-900" />
+                </div>
+                <div class="form-group mt-8">
+                    <label for="you" class="text-gray-100">About you</label><br>
+                    <textarea id="you" placeholder="Enter here"
+                        class=" border-solid border-black bg-gray-300 w-3/5 text-gray-900"></textarea>
+                </div>
+                    <div class="form-group mt-8">
+                        <label for="address" class="text-gray-100">Your Address</label><br>
+                        <textarea id="address" placeholder="Enter here"
+                            class=" border-solid border-black bg-gray-300 w-3/5 text-gray-900"></textarea>
+                    </div>
+                    <div class="form-group mt-8">
+                        <label for="linkedin" class="text-gray-100">Your LinkedIn link</label><br>
+                        <input type="url" id="linkedin" placeholder="Enter here"
+                            class=" border-solid border-black bg-gray-300 w-3/5 text-gray-900" />
+                    </div>
+                    <div class="form-group mt-8">
+                        <label for="facebook" class="text-gray-100">Your Facebook link</label><br>
+                        <input type="url" id="facebook" placeholder="Enter here"
+                            class=" border-solid border-black bg-gray-300 w-3/5 text-gray-900" />
+                    </div>
+                    <div class="form-group mt-8">
+                        <label for="instagram" class="text-gray-100">Your Instagram link</label><br>
+                        <input type="url" id="insta" placeholder="Enter here"
+                            class=" border-solid border-black bg-gray-300 w-3/5 text-gray-900" />
+                    </div>
+                    <div class="form-group mt-8 " id="we">
+                        <label for="skills" class="text-gray-100">Your Skills</label><br>
+                        <textarea  placeholder="Enter here"
+                            class=" border-solid border-black bg-gray-300 w-3/5 block skill text-gray-900" rows="2"></textarea>
+                        <button onclick="addNewSField()" class="bg-blue-700 text-gray-100 ml-96 mt-9 rounded-xl w-52"
+                            id="weAddButton">Add</button>
+                    </div>
+                    <div class="form-group mt-8" id="pe">
+                        <label for="projects" class="text-gray-100">Work Experience</label><br>
+                        <textarea id="projects" placeholder="Enter here"
+                            class=" border-solid border-black bg-gray-300 w-3/5 block work text-gray-900" rows="3"></textarea>
+                        <button onclick="addNewPField()" class="bg-blue-700 text-gray-100 ml-96 mt-9 rounded-xl w-52"
+                            id="peAddbutton">Add</button>
+                    </div>
+                    <div class="form-group mt-8" id="ae">
+                        <label for="academics" class="text-gray-100">Academics</label><br>
+                        <textarea id="academics" placeholder="Enter here"
+                            class=" border-solid border-black bg-gray-300 w-3/5 block academic text-gray-900" rows="3"></textarea>
+                        <button onclick="addNewAField()" class="bg-blue-700 text-gray-100 ml-96 mt-9 rounded-xl w-52"
+                            id="aeAddbutton">Add</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bg-gray-900 -translate-x-64 mt-72 h-40 w-full ml-64">
+                <button onclick="generateCV()" class="bg-blue-700 text-gray-100 ml-96 mt-9 rounded-xl w-72 h-16 translate-x-64"><a
+                        href="#">GENERATE CV</a></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEMPLATE PAGE -->
+
+
+    <div id="template" class="bg-gray-600">
+        <h1 class="text-center italic text-3xl font-mono bg-gray-900 text-gray-100 ml-0 ">TEMPLATES</h1>
+        <div class=" flex flex-wrap bg-gray-600">
+            <div class="ml-36 mt-24 border-4 border-gray-900 bg-gray-100 temp"><img
+                    src="Black and White Minimalistic Simple Resume.jpg" width="400px"><button
+                    class="bg-rose-600 text-gray-100 my-9 ml-32 rounded-xl w-36" onclick="view()">VIEW</button></img></div>
+            <div class="ml-36 mt-24 border-4 border-gray-900 bg-gray-100 temp"><img src="Pink Simple Profile Resume.jpg"
+                    width="400px"><button
+                    class="bg-rose-600 text-gray-100 my-9 ml-32 rounded-xl w-36" onclick="view1()">VIEW</button></img></div>
+            <div class="ml-36 mt-24 border-4 border-gray-900 bg-gray-100 temp"><img
+                    src="Black White Minimalist CV Resume.jpg" width="400px"><button
+                    class="bg-rose-600 text-gray-100 my-9 ml-32 rounded-xl w-36">VIEW</button></img></div>
+            <div class="ml-36 mt-24 border-4 border-gray-900 bg-gray-100 temp"><img
+                    src="Black and White Minimalist Simple Design Freelancer Resume.jpg" width="400px"><button
+                    class="bg-rose-600 text-gray-100 my-9 ml-32 rounded-xl w-36" onclick="view2()">VIEW</button></img></div>
+            <div class="ml-36 mt-24 border-4 border-gray-900 bg-gray-100 temp"><img
+                    src="blue professional modern CV resume.jpg" width="400px"><button
+                    class="bg-rose-600 text-gray-100 my-9 ml-32 rounded-xl w-36">VIEW</button></img></div>
+            <div class="ml-36 mt-24 border-4 border-gray-900 bg-gray-100 temp"><img
+                    src="Light Grey Minimalist resume.jpg" width="400px"><button
+                    class="bg-rose-600 text-gray-100 my-9 ml-32 rounded-xl w-36">VIEW</button></img></div>
+            <div class="ml-36 mt-24 border-4 border-gray-900 bg-gray-100 temp"><img src="Grey Clean CV Resume Photo.jpg"
+                    width="400px"><button
+                    class="bg-rose-600 text-gray-100 my-9 ml-32 rounded-xl w-36">VIEW</button></img></div>
+        </div>
+        <button id="backT3" class="mt-32 mb-24 ml-72 bg-rose-600 text-gray-100 rounded-xl w-36 h-16" onclick="back4()"><i class="fa-solid fa-backward mr-4"></i>BACK</button>
+    </div>
+
+    <!-- first template -->
+
+    <div id="first_template">
+        <h1 id="nameT1" class="ml-9 text-5xl font-medium">ESTELLE DARCY</h1>
+        <h3 id="professionT1" class="ml-9 text-2xl">Social Media Manager</h3>
+        <p id="aboutT1" class="ml-9 mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis officia
+            architecto impedit, ratione laborum temporibus sint ducimus sunt ex, at, repellendus atque eveniet.</p>
+        <div class="ml-9 mt-9 flex border-t-4">
+            <div class=" text-2xl">SKILLS</div>
+            <div id="skillsT1" class="ml-96">
+                <ul class="list-disc">
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="ml-9 mt-9 flex border-t-4">
+            <div class=" text-2xl">EDUCATION</div>
+            <div id="academicsT1" class="ml-80">
+                <ul class="list-disc">
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="ml-9 mt-9 flex border-t-4">
+            <div class=" text-2xl">Work Experience&nbsp; &nbsp;</div>
+            <div id="workexperienceT1" class="ml-64">
+                <ul class="list-disc">
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="ml-9 mt-9 flex border-t-4">
+            <div class=" text-2xl">Address &nbsp; &nbsp;</div>
+            <p id="addressT1" class="ml-80">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            </p>
+        </div>
+        <div class="ml-9 mt-9 flex border-t-4">
+            <div class=" text-2xl">CONTACT</div>
+            <div id="contactT1" class="ml-80">
+                <ul>
+                    <li class="flex"><a href="#"><i class="fa-brands fa-linkedin mr-4 inline"></i><p id="linkedinT1" class="inline">Lorem ipsum dolor sit
+                        amet consectetur.</p></a></li>
+                <li class="flex"><a href="#"><i class="fa-brands fa-facebook mr-4 inline"></i><p id="facebookT1" class="inline">Lorem ipsum dolor sit
+                        amet.</p></a></li>
+                <li class="flex"><a href="#"><i class="fa-brands fa-square-instagram mr-4 inline"></i><p id="instaT1" class="inline">Lorem ipsum dolor
+                        sit amet consectetur.</p></a></li>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <button id="backT1" class="mt-16 ml-96 bg-rose-600 text-gray-100 rounded-xl w-36 h-16" onclick="back1()"><i class="fa-solid fa-backward mr-4"></i>BACK</button>
+        <button id="buttonT1" class="mt-36 ml-44 bg-rose-600 text-gray-100 rounded-xl w-36 h-16" onclick="printCV()"><i class="fa-solid fa-print mr-4"></i>PRINT</button>
+    </div>
+
+    <!-- second template -->
+
+    <div id="second_template">
+        <div class="h-28 bg-red-800 text-center">
+            <h1 class="ml-8 text-5xl font-medium text-white" id="nameT2">HOWARD ONG</h1>
+            <h3 id="professionT2" class="ml-8 text-2xl text-white">Social Media Manager</h3>
+        </div>
+        <div class="flex">
+            <div class="col-md-5 ml-96">
+                <h3 class="ml-8 text-2xl font-medium text-red-800 mt-9 ml-9">MY CONTACT</h3>
+                <div id="contactT2" class="ml-9 mt-4 border-t-4 border-red-800">
+                    <ul class="mt-5">
+                        <li class="flex"><a href="#"><i class="fa-brands fa-linkedin mr-4 inline"></i><p id="linkedinT2" class="inline">Lorem ipsum dolor sit
+                                amet consectetur.</p></a></li>
+                        <li class="flex"><a href="#"><i class="fa-brands fa-facebook mr-4 inline"></i><p id="facebookT2" class="inline">Lorem ipsum dolor sit
+                                amet.</p></a></li>
+                        <li class="flex"><a href="#"><i class="fa-brands fa-square-instagram mr-4 inline"></i><p id="instaT2" class="inline">Lorem ipsum dolor
+                                sit amet consectetur.</p></a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ml-9 mt-9">
+                    <div class=" text-2xl font-medium text-red-800 mt-9  ">Address</div>
+                    <div id="addressT2" class=" mt-4 border-t-4 border-red-800">
+                        <p class="mt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="ml-9 mt-9 ">
+                    <div class=" text-2xl font-medium text-red-800 mt-9 ">SKILLS</div>
+                    <div id="skillsT2" class="mt-4 border-t-4 border-red-800">
+                        <ul class="list-disc ml-5">
+                            <li>Lorem ipsum dolor sit.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ml-9 mt-9">
+                    <div class="text-2xl font-medium text-red-800 mt-9">EDUCATION</div>
+                    <div id="academicsT2" class="mt-4 border-t-4 border-red-800">
+                        <ul class="list-disc ml-5">
+                            <li>Lorem ipsum dolor sit.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 ml-8">
+                <div class="ml-32  w-96">
+                    <div class="text-2xl font-medium text-red-800 mt-9 ml-9">ABOUT ME</div>
+                    <p id="aboutT2" class="mt-4 border-t-4 text-gray-900 border-red-800">Lorem ipsum dolor sit amet
+                        consectetur
+                        adipisicing elit. Officiis offiarchitecto impedit, ratione laborum temporibus sint ducimus
+                        sunt ex, at, repellendus atque eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Inventore quas exercitationem minima, sint eius modi cupiditate quasi fugit iusto iste cum
+                        saepe, quidem sit eligendi ipsum molestias, porro quam? Corrupti dignissimos reprehenderit
+                        necessitatibus molestias tempora nam officiis quos accusantium itaque? Recusandae mollitia
+                        similique incidunt laborum tempora. Cupiditate aperiam quod, fuga voluptates voluptatem illum
+                        enim optio ducimus, dolorum, sit ipsum corporis sunt dolor velit ut debitis nulla. Ipsa!</p>
+
+                </div>
+                <div class=" ml-32">
+                    <div class=" text-2xl font-medium text-red-800 mt-9">Work Experience</div>
+                    <div id="workexperienceT2" class="mt-4 border-t-4 border-red-800">
+                        <ul class="list-disc">
+                            <li>Lorem ipsum dolor sit.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="backT2" class="mt-16 ml-96 bg-rose-600 text-gray-100 rounded-xl w-36 h-16" onclick="back2()"><i class="fa-solid fa-backward mr-4"></i>BACK</button>
+        <button id="buttonT2" class="mt-16 ml-44 bg-rose-600 text-gray-100 rounded-xl w-36 h-16" onclick="printCV()"><i class="fa-solid fa-print mr-4"></i>PRINT</button>
+    </div>
+
+    <!-- third template -->
+
+    <div id="third_template">
+        <div class="h-28 ">
+            <h1 class="ml-8 text-5xl font-medium " id="nameT3">HOWARD ONG</h1>
+            <h3 id="professionT3" class="ml-8 text-2xl">Social Media Manager</h3>
+        </div>
+        <div class="flex">
+            <div class="col-md-5">
+                <div>
+                    <h3 class="ml-8 text-2xl font-medium  mt-9 ml-9">MY CONTACT</h3>
+                    <div id="contactT3" class="ml-9 mt-4  ">
+                        <ul class="mt-5">
+                            <li class="flex"><a href="#"><i class="fa-brands fa-linkedin mr-4 inline"></i><p id="linkedinT3" class="inline">Lorem ipsum dolor sit
+                                amet consectetur.</p></a></li>
+                        <li class="flex"><a href="#"><i class="fa-brands fa-facebook mr-4 inline"></i><p id="facebookT3" class="inline">Lorem ipsum dolor sit
+                                amet.</p></a></li>
+                        <li class="flex"><a href="#"><i class="fa-brands fa-square-instagram mr-4 inline"></i><p id="instaT3" class="inline">Lorem ipsum dolor
+                                sit amet consectetur.</p></a></li>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="ml-9 mt-9">
+                        <div class="text-2xl font-medium  mt-9">EDUCATION</div>
+                        <div id="academicsT3" class="mt-4">
+                            <ul class="list-disc ml-5">
+                                <li>Lorem ipsum dolor sit.</li>
+                                <li>Lorem ipsum dolor sit amet.</li>
+                                <li>Lorem ipsum dolor sit amet consectetur.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ml-9 mt-9 ">
+                        <div class=" text-2xl font-medium mt-9 ">SKILLS</div>
+                        <div id="skillsT3" class="mt-4">
+                            <ul class="list-disc ml-5">
+                                <li>Lorem ipsum dolor sit.</li>
+                                <li>Lorem ipsum dolor sit amet.</li>
+                                <li>Lorem ipsum dolor sit amet consectetur.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="ml-16 w-96">
+                    <div class="text-2xl  mt-9 ml-9">ABOUT ME</div>
+                    <p id="aboutT3" class="mt-4 ">Lorem ipsum dolor sit amet
+                        consectetur
+                        adipisicing elit. Officiis offiarchitecto impedit, ratione laborum temporibus sint ducimus
+                        sunt ex, at, repellendus atque eveniet. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit.
+                        Inventore quas exercitationem minima, sint eius modi cupiditate quasi fugit iusto iste cum
+                        saepe, quidem sit elige</p>
+
+                </div>
+                <div class=" ml-16 mt-16">
+                    <div class=" text-2xl  mt-9">Work Experience</div>
+                    <div id="workexperienceT3" class="mt-4 ">
+                        <ul class="list-disc">
+                            <li>Lorem ipsum dolor sit.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ml-16 mt-16">
+                    <div class=" text-2xl mt-9">Address &nbsp; &nbsp;</div>
+                    <p id="addressT3" class="mt-4">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                </div>
+
+            </div>
+            </div>
+            <button id="backT3" class="mt-16 ml-96 bg-rose-600 text-gray-100 rounded-xl w-36 h-16" onclick="back3()"><i class="fa-solid fa-backward mr-4"></i>BACK</button>
+            <button id="buttonT3" class="mt-32 ml-44 bg-rose-600 text-gray-100 rounded-xl w-36 h-16" onclick="printCV()"><i class="fa-solid fa-print mr-4"></i>PRINT</button>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
